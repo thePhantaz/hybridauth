@@ -130,7 +130,7 @@ class Google extends OAuth2
     */
     public function getUserContacts($parameters = [])
     {
-        $parameters = ['max-results' => 500] + $parameters;
+        $parameters = array_merge(['max-results' => 500], $parameters);
 
         // Google Gmail and Android contacts
         if (false !== strpos($this->scope, '/m8/feeds/') || false !== strpos($this->scope, '/auth/contacts.readonly')) {
